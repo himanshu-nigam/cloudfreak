@@ -24,7 +24,7 @@ pipeline {
                script {         
                  def customImage = docker.build('hnigam420/gl', "./docker")
                  docker.withRegistry('https://registry.hub.docker.com', 'hnhub') {
-                 customImage.push("${env.BUILD_NUMBER}")
+                 customImage.push("latest")
                  }                     
            }
         }
